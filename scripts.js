@@ -12,13 +12,36 @@ openNav.addEventListener("click", () => {
 });
 
 // Change steps
-const stepCards = document.querySelectorAll(".steps-block__cards");
-const stepIcons = document.querySelectorAll(".steps-block__icon");
+const stepCardsOg = document.querySelectorAll(".steps-block__cards");
+const stepIconsOg = document.querySelectorAll(".steps-block__icon");
 
+const stepsList = [];
+const iconList = [];
+for (let i = 0; i < stepCardsOg.length; i++) {
+  let stepsArray = [];
+  let iconArray = [];
+  for (let x = 0; x < stepCardsOg.length; x++) {
+    if (x !== i) {
+      stepsArray.push(stepCardsOg[x]);
+      iconArray.push(stepIconsOg[x]);
+    }
+  }
+  stepsList.push(stepsArray);
+  iconList.push(iconArray);
+}
 
-for (let i = 0; i < stepCards.length; i++) {
-  stepCards[i].addEventListener("click", () => {
-    stepCards[i].classList.toggle("bg-violet");
-    stepIcons[i].classList.toggle("icon-white");
+function changeCardStyles(i) {
+  stepCardsOg[i].classList.toggle("bg-violet");
+  stepIconsOg[i].classList.toggle("icon-white");
+  
+  for (let x = 0; x < stepsList.length; x++) {
+    stepsList[i][x].classList.remove("bg-violet");
+    iconList[i][x].classList.remove("icon-white");
+  }
+}
+
+for (let i = 0; i < stepCardsOg.length; i++) {
+  stepCardsOg[i].addEventListener("click", () => {
+    changeCardStyles(i);
   });
 }
