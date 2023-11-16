@@ -14,6 +14,7 @@ openNav.addEventListener("click", () => {
 // Change steps
 const stepCardsOg = document.querySelectorAll(".steps-block__cards");
 const stepIconsOg = document.querySelectorAll(".steps-block__icon");
+const stepTexts = document.querySelectorAll(".full-step");
 
 const stepsList = [];
 const iconList = [];
@@ -31,17 +32,31 @@ for (let i = 0; i < stepCardsOg.length; i++) {
 }
 
 function changeCardStyles(i) {
-  stepCardsOg[i].classList.toggle("bg-violet");
-  stepIconsOg[i].classList.toggle("icon-white");
-  
-  for (let x = 0; x < stepsList.length; x++) {
+  stepCardsOg[i].classList.add("bg-violet");
+  stepIconsOg[i].classList.add("icon-white");
+
+  for (let x = 0; x < stepsList.length - 1; x++) {
+    console.log(stepsList[i])
+    console.log(stepsList[i][x])
     stepsList[i][x].classList.remove("bg-violet");
     iconList[i][x].classList.remove("icon-white");
   }
 }
 
+// TODO: Terminar o alterador de textos
+function changeStepBlock(i) {
+  for (let x = 0; x < stepTexts.length; x++) {
+    if (x === i) {
+      stepTexts[i].classList.remove("hidden");
+    } else {
+      stepTexts[x].classList.add("hidden");
+    }
+  }
+}
+
 for (let i = 0; i < stepCardsOg.length; i++) {
   stepCardsOg[i].addEventListener("click", () => {
+    changeStepBlock(i);
     changeCardStyles(i);
   });
 }
