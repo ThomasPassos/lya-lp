@@ -36,14 +36,11 @@ function changeCardStyles(i) {
   stepIconsOg[i].classList.add("icon-white");
 
   for (let x = 0; x < stepsList.length - 1; x++) {
-    console.log(stepsList[i])
-    console.log(stepsList[i][x])
     stepsList[i][x].classList.remove("bg-violet");
     iconList[i][x].classList.remove("icon-white");
   }
 }
 
-// TODO: Terminar o alterador de textos
 function changeStepBlock(i) {
   for (let x = 0; x < stepTexts.length; x++) {
     if (x === i) {
@@ -60,3 +57,35 @@ for (let i = 0; i < stepCardsOg.length; i++) {
     changeCardStyles(i);
   });
 }
+
+// Formulário
+const formBtn = document.querySelector(".form__btn");
+
+formBtn.addEventListener("click", () => {
+  const formName = document.forms["form"]["name"].value;
+  const formPhone = document.forms["form"]["cellphone"].value;
+  const formEmail = document.forms["form"]["email"].value;
+  const formService = document.forms["form"]["service"].value;
+
+  if (formName && formPhone && formEmail && formService) {
+    const url =
+      "https://api.sheety.co/1c246bf7633079cbc31ec3828a5ae5c0/lyaContatos/página1";
+
+    const body = {
+      página1: {
+        nome: formName,
+        telefone: formPhone,
+        email: formEmail,
+        serviço: formService,
+      },
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+  }
+});
