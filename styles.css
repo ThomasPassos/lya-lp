@@ -107,7 +107,7 @@ h4 {
 }
 
 main {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 section {
@@ -295,6 +295,7 @@ a:visited {
   background-color: #e6e6e7;
   padding-top: 12em;
   text-align: center;
+  padding-right: 0;
 }
 
 .second-grand-block {
@@ -324,7 +325,7 @@ a:visited {
   border-radius: 0.75rem;
   cursor: pointer;
   padding: 1.5em 3em;
-  min-width: 15rem;
+  min-width: 12rem;
   transition: background-color 0.6s;
 }
 
@@ -341,6 +342,7 @@ a:visited {
 .full-step {
   align-self: center;
   text-align: start;
+  margin-right: 6.3%;
 }
 
 .full-step__title {
@@ -378,6 +380,10 @@ a:visited {
   .second-grand-block {
     flex-direction: row;
     gap: 7.3125rem;
+  }
+
+  .steps-block__cards {
+    min-width: 15rem;
   }
 }
 
@@ -433,13 +439,13 @@ a:visited {
 
 .forth-section__call-to-action {
   font-size: clamp(1rem, 1.7vw + 0.8rem, 2.5rem);
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 }
 
 .cta-block__subtitle {
   font-size: clamp(0.85rem, 0.6vw + 0.95rem, 2rem);
   font-weight: 600;
-  margin-bottom: 1.3125em;
+  margin-bottom: 1.3125rem;
 }
 
 .cta-block__text {
@@ -490,6 +496,7 @@ a:visited {
 
 .form__label--check {
   margin-left: 0.3em;
+  margin-bottom: 0.2em;
 }
 
 .form__input--check {
@@ -532,11 +539,19 @@ a:visited {
   background-color: var(--grey);
   color: white;
   padding: 10% 5% 5%;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .sections {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   gap: 1rem;
 }
 
@@ -546,7 +561,6 @@ a:visited {
 
 .sections__link {
   color: var(--violet);
-  text-decoration: none;
   line-height: 2rem;
   width: fit-content;
 }
@@ -580,4 +594,28 @@ a:visited {
 
 .footer__icon:hover {
   color: var(--violet-light);
+}
+
+.footer__img {
+  display: none;
+  position: absolute;
+  bottom: -5rem;
+  right: 3rem;
+  width: 60%;
+}
+
+@media (min-width: 1200px) {
+  .footer-block {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+
+  .footer__img {
+    display: block;
+  }
 }
