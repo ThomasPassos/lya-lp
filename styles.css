@@ -65,7 +65,7 @@
 }
 
 .scroller {
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .scroller__inner {
@@ -492,6 +492,7 @@ a:visited {
 }
 
 .form__field--check {
+  accent-color: var(--violet);
   margin-top: 0.6em;
 }
 
