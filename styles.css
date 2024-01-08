@@ -111,7 +111,7 @@ main {
 }
 
 section {
-  padding: 6.35% 10%;
+  padding: 10% 10%;
 }
 
 img {
@@ -201,7 +201,7 @@ a:visited {
 .first-section {
   background-color: black;
   backdrop-filter: blur(2px);
-  padding: 6.5% 10% 15em;
+  padding: 6.5% 10%;
 }
 
 .first-grand-block {
@@ -295,7 +295,6 @@ a:visited {
 /* Segunda secção */
 .second-section {
   background-color: #e6e6e7;
-  padding-top: 12em;
   text-align: center;
   padding-right: 0;
 }
@@ -358,9 +357,9 @@ a:visited {
 }
 
 @media (min-width: 800px) {
-  .second-section {
+  /* .second-section {
     padding-top: 13em;
-  }
+  } */
   .second-section__subtitle {
     text-align: left;
   }
