@@ -307,6 +307,7 @@ a:visited {
 
 .second-section__subtitle {
   font-size: clamp(1rem, 0.9rem + 1.3vw, 2.5rem);
+  margin-right: 10%;
 }
 
 .steps-block {
@@ -343,7 +344,7 @@ a:visited {
 .full-step {
   align-self: center;
   text-align: start;
-  margin-right: 6.3%;
+  margin-right: 10%;
 }
 
 .full-step__title {
