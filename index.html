@@ -38,14 +38,14 @@
                 <article class="title-block">
                     <h1 class="title-block__title">Combinamos criatividade, design <br> e tecnologia para criar <span
                             class="color--violet bold"><span class="space">Landing</span><br>
-                            Pages</span> que convertem</h1>
-                    <a href="#4" class="title-block__btn btn">Vamos começar o seu projeto!
+                            Pages</span> que convertem!</h1>
+                    <a href="#4" class="title-block__btn btn">Vamos começar o seu projeto
                     </a>
                 </article>
                 <div class="title-img">
                 </div>
             </div>
-            <!-- <div class="scroller" data-animated="true" data-direction="left">
+            <div class="scroller" data-animated="true" data-direction="left">
                 <div class="card-block scroller__inner">
                     <article class="card-block__card card-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -81,7 +81,7 @@
                         </p>
                     </article>
                 </div>
-            </div> -->
+            </div>
         </section>
         <section id="2" class="second-section section">
             <h2 class="second-section__subtitle">Nosso processo<br>Unindo <span class="color--violet bold">criatividade,
@@ -234,15 +234,17 @@
             <form name="form" class="form">
                 <div class="form__field">
                     <label class="form__label" for="name">Nome<span class="color--yellow">*</span></label>
-                    <input class="form__input" id="name" name="name" type="text" required>
+                    <input class="form__input input" id="name" name="name" type="text" required>
                 </div>
                 <div class="form__field">
+                    <!-- ! Bug: O campo de telefone aceita letras e caracteres além de um número telefônico  -->
                     <label class="form__label" for="cellphone">Telefone<span class="color--yellow">*</span></label>
-                    <input class="form__input" id="cellphone" name="cellphone" type="text" required>
+                    <input class="form__input input" id="cellphone" name="cellphone" type="text" required>
                 </div>
                 <div class="form__field">
+                    <!-- ! Bug: O campo de email aceita não-emails -->
                     <label class="form__label" for="email">Email<span class="color--yellow">*</span></label>
-                    <input class="form__input" id="email" name="email" type="text" required autocomplete="email">
+                    <input class="form__input input" id="email" name="email" type="text" required autocomplete="email">
                 </div>
                 <div class="form__field">
                     <label class="form__label" for="service">Qual o serviço desejado?<span
@@ -255,7 +257,7 @@
                     </select>
                 </div>
                 <div class="form__field--check">
-                    <input class="form__input--check" type="checkbox" name="check" id="check" required>
+                    <input class="form__input--check input" type="checkbox" name="check" id="check" required>
                     <label for="check" class="form__label--check">Aceito receber comunicações<span
                             class="color--yellow">*</span></label>
                 </div>

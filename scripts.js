@@ -82,10 +82,34 @@ formBtn.addEventListener("click", () => {
 
     fetch(url, {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
       body: JSON.stringify(body),
     });
   }
 });
+
+// Ativação do botão
+// ! Bug: O botão ainda é clicável mesmo "acinzentado" após a primeira ativação
+const inputs = document.querySelectorAll(".input");
+formBtn.disabled = true;
+formBtn.style.cursor = "default";
+
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("input", () => {
+    const values = [];
+    inputs.forEach((v) => values.push(v.value));
+
+    console.log(values);
+    console.log(inputs[3].checked)
+    console.log(values.includes(""))
+
+    formBtn.disabled = values.includes(""); 
+
+    if (formBtn.disabled === false && inputs[3].checked) {
+      formBtn.classList.add("bg-violet");
+      formBtn.style.cursor = "pointer";
+    } else {
+      formBtn.classList.remove("bg-violet");
+      formBtn.style.cursor = "default";
+    }
+  });
+}
