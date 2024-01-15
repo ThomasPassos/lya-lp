@@ -88,7 +88,20 @@ formBtn.addEventListener("click", () => {
 });
 
 // Ativação do botão
-// ! Bug: O botão ainda é clicável mesmo "acinzentado" após a primeira ativação
+
+//Função de mudança do botão
+function changeFormBtn(state) {
+  if (state) {
+    formBtn.classList.add("bg-violet");
+    formBtn.style.cursor = "pointer";
+    formBtn.disabled = false; 
+  } else {
+    formBtn.classList.remove("bg-violet");
+    formBtn.style.cursor = "default";
+    formBtn.disabled = true; 
+  }
+}
+
 const inputs = document.querySelectorAll(".input");
 formBtn.disabled = true;
 formBtn.style.cursor = "default";
@@ -98,18 +111,10 @@ for (let i = 0; i < inputs.length; i++) {
     const values = [];
     inputs.forEach((v) => values.push(v.value));
 
-    console.log(values);
-    console.log(inputs[3].checked)
-    console.log(values.includes(""))
-
-    formBtn.disabled = values.includes(""); 
-
-    if (formBtn.disabled === false && inputs[3].checked) {
-      formBtn.classList.add("bg-violet");
-      formBtn.style.cursor = "pointer";
+    if (inputs[3].checked) {
+      changeFormBtn(true);
     } else {
-      formBtn.classList.remove("bg-violet");
-      formBtn.style.cursor = "default";
+      changeFormBtn(false);
     }
   });
 }
