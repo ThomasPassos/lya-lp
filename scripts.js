@@ -82,8 +82,13 @@ formBtn.addEventListener("click", () => {
 
     fetch(url, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body),
     });
+
+    alert("Seus dados foram enviados com sucesso!")
   }
 });
 
@@ -94,11 +99,11 @@ function changeFormBtn(state) {
   if (state) {
     formBtn.classList.add("bg-violet");
     formBtn.style.cursor = "pointer";
-    formBtn.disabled = false; 
+    formBtn.disabled = false;
   } else {
     formBtn.classList.remove("bg-violet");
     formBtn.style.cursor = "default";
-    formBtn.disabled = true; 
+    formBtn.disabled = true;
   }
 }
 
@@ -118,3 +123,10 @@ for (let i = 0; i < inputs.length; i++) {
     }
   });
 }
+
+// Formulário
+const numberInput = document.querySelector("#cellphone");
+
+numberInput.addEventListener("input", () => {
+  numberInput.value = numberInput.value.replace(/(?![0-9])./gim, "");
+});
