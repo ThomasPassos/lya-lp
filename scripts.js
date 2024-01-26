@@ -116,7 +116,7 @@ for (let i = 0; i < inputs.length; i++) {
     const values = [];
     inputs.forEach((v) => values.push(v.value));
 
-    if (inputs[3].checked) {
+    if (inputs[3].checked && !values.includes('')) {
       changeFormBtn(true);
     } else {
       changeFormBtn(false);
